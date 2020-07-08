@@ -1,6 +1,7 @@
 const express = require('express');
 const socketio = require('socket.io');
 const http = require('http');
+const cors = require('cors');
 
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./users.js');
 
@@ -10,6 +11,7 @@ const router = require('./router');
 
 const app = express();
 const server = http.createServer(app);
+
 const io = socketio(server);
 
 io.on('connection', (socket) => {
@@ -23,7 +25,7 @@ io.on('connection', (socket) => {
 
         socket.join(user.room);
 
-        callback();
+        callback(); 
     });
 
     socket.on('sendMessage', (message, callback) => {
@@ -32,12 +34,15 @@ io.on('connection', (socket) => {
         io.to(user.room).emit('message', { user: user.name, text: message});
 
         callback();
-    });
+    }); 
 
     socket.on('disconnect', () => {
         console.log('User has left!');
-    })
+    });
 });
+
+app.use(cors());
+app.options('*', cors());
 
 app.use(router);
 
