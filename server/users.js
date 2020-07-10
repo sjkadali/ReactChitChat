@@ -24,7 +24,7 @@ const removeUser = ( id ) => {
     }
 }
 
-const getUser = ( id ) => users.findIndex((user) => users.id === id);
+const getUser = ( id ) => users.findIndex((user) => user.id === id);
 
 const getUsersInRoom = ( room ) => users.filter((user) => user.room === room);
 
