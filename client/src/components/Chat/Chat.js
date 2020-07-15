@@ -5,6 +5,7 @@ import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
 import Messages from '../Messages/Messages';
 import './Chat.css';
+import TextContainer from '../TextContainer/TextContainer';
 
 let socket = io();
 
@@ -52,6 +53,7 @@ const sendMessage = (event) => {
                 <InfoBar room={room}/>
                 <Messages messages={messages} name={name} />
                 <Input message= {message} setMessage={setMessage} sendMessage={sendMessage} /> 
+                <TextContainer users={users} />
             </div>
         </div>
     );   
