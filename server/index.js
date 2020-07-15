@@ -29,15 +29,19 @@ io.on('connection', (socket) => {
 
         socket.join(user.room);               
     })
-    socket.on('sendMessage', (message) => {
+    socket.on('sendMessage', (message, callback) => {
        const user = getUser(socket.id);
        //console.log("user: " + user, user.name);
         //io.emit('message', {  user: user.name, text: message});
+        callback();
     })
 
     socket.on('disconnect', () => {
-        io.emit('message',  'A user has left the room');
-    })
+        const user = removeUser(socket.id);
+        if (user) {
+            io.to(user.room).emit('message',  {user: 'admin', text: `${user.name} has left.`});
+        }
+        })
 })
 /* io.on('connect', (socket) => {
     socket.on('join', ({ name, room }) => {
