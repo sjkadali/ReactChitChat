@@ -17,10 +17,10 @@
   }
   
   .sendButton {
-    color: #fff !important;
+    color: rgba(225, 238, 238, 0.87) !important;
     text-transform: uppercase;
     text-decoration: none;
-    background: #2979FF;
+    background: rgb(4, 98, 136);
     padding: 20px;
     display: inline-block;
     border: none;
