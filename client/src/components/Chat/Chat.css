@@ -15,6 +15,12 @@
     height: 60%;
     width: 35%;
   }
+
+  .chat-main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+  
   
   @media (min-width: 320px) and (max-width: 480px) {
     .outerContainer {

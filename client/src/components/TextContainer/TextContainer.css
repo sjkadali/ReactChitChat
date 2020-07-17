@@ -1,33 +1,22 @@
-.textContainer {
-    display: flex;
-    flex-direction: column;
-    margin-left: 100px;
-    color: white;
-    height: 20%;
-    justify-content: space-between;
-  }
-  
-  .activeContainer {
-    display: flex;
-    align-items: top;
-    margin-bottom: 80%;
-  }
-  
-  .activeItem {
-    display: flex;
-    align-items: center;
-  }
-  
-  .activeContainer img {
-    padding-left: 10px;
-  }
-  
-  .textContainer h1 {
-    margin-bottom: 0px;
-  }
-  
-  @media (min-width: 320px) and (max-width: 1200px) {
-    .textContainer {
-      display: none;
-    }
-  }
+.chat-sidebar {
+  background: var(--dark-color-b);
+  color: rgb(12, 10, 10);
+  padding: 20px 20px 60px;
+  overflow-y: scroll;
+}
+
+.chat-sidebar h2 {
+  font-size: 15px;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.chat-sidebar h3 {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.chat-sidebar ul li {
+  padding: 10px 0;
+}

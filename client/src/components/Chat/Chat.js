@@ -50,11 +50,17 @@ const sendMessage = (event) => {
     return (
         <div className="outerContainer">
             <div className="container">
-                <InfoBar room={room}/>
-                <Messages messages={messages} name={name} />
+                <InfoBar>
+                    <title><i class="fas fa-smile"></i> ReactChitChat
+                    </title>
+                    </InfoBar>
+                <main class="chat-main">
+
+                    <TextContainer users={users} />
+                    <Messages messages={messages} name={name} />
+                </main>
                 <Input message= {message} setMessage={setMessage} sendMessage={sendMessage} /> 
             </div>
-            <TextContainer users={users} />
         </div>
     );   
 }

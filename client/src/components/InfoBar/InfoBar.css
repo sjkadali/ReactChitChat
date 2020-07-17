@@ -2,10 +2,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #07458bde;
+    background: #022958de;
     border-radius: 4px 4px 0 0;
     height: 60px;
     width: 100%;
+    font-size: 10px;
+    color: #c5ddf8de
+
+  }
+
+  .h1 {
+    font-size: 10px;
+    color: #e4eaf1de
   }
   
   .leftInnerContainer {
